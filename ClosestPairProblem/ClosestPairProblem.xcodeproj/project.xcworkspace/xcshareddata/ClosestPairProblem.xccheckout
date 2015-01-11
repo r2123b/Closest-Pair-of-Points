@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>6C932F5D-A1BD-4BF8-A72B-A3F21C68CA63</string>
+	<key>IDESourceControlProjectName</key>
+	<string>ClosestPairProblem</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D2949D0A3F412567123FB560F6126BE574BE0A2A</key>
+		<string>https://github.com/r2123b/Closest-Pair-of-Points.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ClosestPairProblem/ClosestPairProblem.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D2949D0A3F412567123FB560F6126BE574BE0A2A</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/r2123b/Closest-Pair-of-Points.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D2949D0A3F412567123FB560F6126BE574BE0A2A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D2949D0A3F412567123FB560F6126BE574BE0A2A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>2-Dimensional%20ClosestPairProblem</string>
+		</dict>
+	</array>
+</dict>
+</plist>
