@@ -18,7 +18,7 @@ struct Point {
     int x;
     int y;
 };
-
+void printPointSet(const vector<Point> &pointSet);
 bool readFile(vector<Point> &pointSet);
 float twoPointDist(const Point &p1, const Point &p2);
 

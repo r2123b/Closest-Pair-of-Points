@@ -172,6 +172,7 @@
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(LIBRARY_OPT_LOCAL_INCLUDE)";
 			};
 			name = Debug;
 		};
@@ -206,6 +207,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "$(LIBRARY_OPT_LOCAL_INCLUDE)";
 			};
 			name = Release;
 		};
@@ -242,6 +244,7 @@
 				B7E181221A621FC1008304BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

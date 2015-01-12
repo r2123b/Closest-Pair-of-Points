@@ -10,12 +10,14 @@
 #include <vector>
 #include "function.h"
 
+
 using namespace std;
 
 int main(int argc, const char * argv[]) {
     vector<Point> pointSet;
-    
     readFile(pointSet);
+    
+    printPointSet(pointSet);
     
     return 0;
 }
