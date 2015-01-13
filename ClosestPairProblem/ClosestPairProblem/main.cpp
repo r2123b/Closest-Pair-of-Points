@@ -17,7 +17,11 @@ int main(int argc, const char * argv[]) {
     vector<Point> pointSet;
     readFile(pointSet);
     
-    printPointSet(pointSet);
+//    printPointSet(pointSet);
+    
+    
+    
+    printf("The smallest distance is %f.\n ", closest(pointSet, (int)pointSet.size()));
     
     return 0;
 }
