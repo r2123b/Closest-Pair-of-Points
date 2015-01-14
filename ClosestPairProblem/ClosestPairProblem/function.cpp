@@ -15,15 +15,16 @@
 using namespace std;
 
 void printPointSet(const vector<Point> &pointSet) {
-    printf("Point number is %d.\n", (int)pointSet.size());
+    printf("The number of PointSet is %d.\n", (int)pointSet.size());
     for (int i=0; i<pointSet.size(); i++) {
         printf("(%2d,%2d) \n", pointSet[i].x, pointSet[i].y);
     }
 }
 
-bool readFile(vector<Point> &pointSet) {
+bool readFile(vector<Point> &pointSet)
+{
     // the file is supposed to put in the same direction with .out
-    ifstream infile("testData2.txt", ifstream::in); // input file stream
+    ifstream infile("testData.txt", ifstream::in); // input file stream
     //    ofstream outfile("outData.txt"); // output file stream
     
     if (!infile) {
@@ -57,13 +58,12 @@ bool readFile(vector<Point> &pointSet) {
 }
 
 
-// Needed to sort array of points according to X coordinate
 int compareX(const void* a, const void* b)
 {
     Point *p1 = (Point *)a,  *p2 = (Point *)b;
     return (p1->x - p2->x);
 }
-// Needed to sort array of points according to Y coordinate
+
 int compareY(const void* a, const void* b)
 {
     Point *p1 = (Point *)a,   *p2 = (Point *)b;
@@ -71,16 +71,15 @@ int compareY(const void* a, const void* b)
 }
 
 // A utility function to find the distance between two points
-float dist(Point p1, Point p2)
+float dist(const Point &p1, const Point &p2)
 {
     return sqrt( (p1.x - p2.x)*(p1.x - p2.x) +
-                (p1.y - p2.y)*(p1.y - p2.y)
-                );
+                 (p1.y - p2.y)*(p1.y - p2.y) );
 }
 
 // A Brute Force method to return the smallest distance between two points
 // in P[] of size n
-float bruteForce(vector<Point> &P, int n)
+float bruteForce( const vector<Point> &P, int n )
 {
     float min = FLT_MAX;
     for (int i = 0; i < n; ++i)
@@ -102,11 +101,11 @@ float min(float x, float y)
 // y coordinate. They all have an upper bound on minimum distance as d.
 // Note that this method seems to be a O(n^2) method, but it's a O(n)
 // method as the inner loop runs at most 6 times
-float stripClosest(Point strip[], int size, float d)
+float stripClosest(vector<Point> &strip, int size, float d)
 {
     float min = d;  // Initialize the minimum distance as d
     
-    qsort(strip, size, sizeof(Point), compareY);
+    qsort(&strip[0], size, sizeof(Point), compareY);
     
     // Pick all points one by one and try the next points till the difference
     // between y coordinates is smaller than d.
@@ -131,11 +130,8 @@ float closestUtil(vector<Point> &P, int n)
     int mid = n/2;
     Point midPoint = P[mid];
     
-    // Consider the vertical line passing through the middle point
-    // calculate the smallest distance dl on left of middle point and
-    // dr on right side
-    vector<Point>::iterator it;
-    it = P.begin() + mid;
+    // I want to do: P_prime = P[mid ~ end]
+    vector<Point>::iterator it = P.begin() + mid;
     vector<Point> P_prime;
     P_prime.assign(it, P.end());
     
@@ -148,23 +144,22 @@ float closestUtil(vector<Point> &P, int n)
     
     // Build an array strip[] that contains points close (closer than d)
     // to the line passing through the middle point
-    Point strip[n];
-    int j = 0;
+    vector<Point> strip;
     for (int i = 0; i < n; i++)
-        if (abs(P[i].x - midPoint.x) < d)
-            strip[j] = P[i], j++;
+        if (abs(P[i].x - midPoint.x) < d) {
+            strip.push_back(P[i]);
+        }
     
     // Find the closest points in strip.  Return the minimum of d and closest
     // distance is strip[]
-    return min(d, stripClosest(strip, j, d) );
+    return min( d, stripClosest(strip, (int)strip.size(), d) );
 }
 
-// The main functin that finds the smallest distance
-// This method mainly uses closestUtil()
-float closest(vector<Point> &P, int n)
+
+float closestPair(vector<Point> &P, int n)
 {
+    // qsort's fisrt parameter has to put the memory location
     qsort(&P[0], P.size(), sizeof(Point), compareX);
 
-    // Use recursive function closestUtil() to find the smallest distance
     return closestUtil(P, n);
 }

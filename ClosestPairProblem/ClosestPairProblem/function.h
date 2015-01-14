@@ -20,7 +20,6 @@ struct Point {
 };
 void printPointSet(const vector<Point> &pointSet);
 bool readFile(vector<Point> &pointSet);
-float twoPointDist(const Point &p1, const Point &p2);
-float closest(vector<Point> &P, int n);
+float closestPair(vector<Point> &P, int n);
 
 #endif /* defined(__ClosestPairProblem__function__) */
