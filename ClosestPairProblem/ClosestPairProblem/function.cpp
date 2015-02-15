@@ -24,7 +24,7 @@ void printPointSet(const vector<Point> &pointSet) {
 bool readFile(vector<Point> &pointSet)
 {
     // the file is supposed to put in the same direction with .out
-    ifstream infile("testData.txt", ifstream::in); // input file stream
+    ifstream infile("testData2.txt", ifstream::in); // input file stream
     //    ofstream outfile("outData.txt"); // output file stream
     
     if (!infile) {
